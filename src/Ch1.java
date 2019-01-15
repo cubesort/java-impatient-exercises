@@ -87,4 +87,5 @@ public class Ch1 {
         Collections.sort(picked);
         System.out.println(picked);
     }
+    private static ArrayList<ArrayList<Integer>> generatePascalsTriangle(int n) {
 }
