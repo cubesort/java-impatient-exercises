@@ -1,5 +1,3 @@
-import org.jetbrains.annotations.NotNull;
-
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,7 +10,9 @@ public class Ch1 {
 //        System.out.println(factorial(BigInteger.valueOf(100)));
 //        printString("Hello World");
 //        printBase36();
-        printLotteryNumber();
+//        printLotteryNumber();
+//        System.out.println(generatePascalsTriangle(4));
+        System.out.println(average(1, 2));
     }
 
     private static void printLargest(int a, int b, int c) {
@@ -87,5 +87,47 @@ public class Ch1 {
         Collections.sort(picked);
         System.out.println(picked);
     }
+
     private static ArrayList<ArrayList<Integer>> generatePascalsTriangle(int n) {
+        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+        int rowCounter = 0;
+        int columnCounter = 0;
+        do {
+            if (columnCounter == 0) {
+                res.add(new ArrayList<>());
+            }
+
+            ArrayList<Integer> row = res.get(rowCounter);
+
+            if (columnCounter == 0 || columnCounter == rowCounter) {
+                row.add(1);
+            } else {
+                ArrayList<Integer> previousRow = res.get(rowCounter - 1);
+                row.add(previousRow.get(columnCounter - 1) + previousRow.get(columnCounter));
+            }
+
+
+            if (columnCounter == rowCounter) {
+                columnCounter = 0;
+            } else {
+                columnCounter++;
+            }
+
+            if (columnCounter == 0) {
+                rowCounter++;
+            }
+        } while (rowCounter < n);
+
+        return res;
+    }
+
+    private static float average(int first, int... rest) {
+        int sum = first;
+
+        for (int value : rest) {
+            sum += value;
+        }
+
+        return (float) sum / (rest.length + 1);
+    }
 }
