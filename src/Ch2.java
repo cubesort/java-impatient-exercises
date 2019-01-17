@@ -25,6 +25,15 @@ public class Ch2 {
 //            arrayList.add(item);
 //        }
 //        System.out.println(RandomNumbers.randomElement(arrayList));
+//        Queue queue = new Queue();
+//        queue.add("0");
+//        queue.add("1");
+//        queue.add("2");
+//        System.out.println(queue.getHead());
+//        System.out.println(queue.getTail());
+//        queue.remove();
+//        System.out.println(queue.getHead());
+//        System.out.println(queue.getTail());
     }
 }
 
@@ -142,5 +151,48 @@ class Car {
 
     public void addGas(int gas) {
         this.gas += gas;
+    }
+}
+
+class Queue {
+    class Node {
+        String value;
+        Node next;
+
+        public Node(String value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return value;
+        }
+    }
+
+    private Node head;
+    private Node tail;
+
+    public void add(String value) {
+        if (this.tail != null) {
+            this.tail.next = new Node(value);
+            this.tail = this.tail.next;
+        } else {
+            this.head = new Node(value);
+            this.tail = this.head;
+        }
+    }
+
+    public void remove() {
+        if (this.head != null) {
+            this.head = this.head.next;
+        }
+    }
+
+    public Node getHead() {
+        return head;
+    }
+
+    public Node getTail() {
+        return tail;
     }
 }
