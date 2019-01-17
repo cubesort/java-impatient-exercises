@@ -34,6 +34,9 @@ public class Ch2 {
 //        queue.remove();
 //        System.out.println(queue.getHead());
 //        System.out.println(queue.getTail());
+//        Queue.Iterator iterator = queue.iterator();
+//        System.out.println(iterator.next());
+//        System.out.println(iterator.next());
     }
 }
 
@@ -169,8 +172,22 @@ class Queue {
         }
     }
 
+    class Iterator {
+        Node current = head;
+
+        public String next() {
+            String currentValue = current.value;
+            current = current.next;
+            return currentValue;
+        }
+    }
+
     private Node head;
     private Node tail;
+
+    public Queue.Iterator iterator() {
+        return new Iterator();
+    }
 
     public void add(String value) {
         if (this.tail != null) {
