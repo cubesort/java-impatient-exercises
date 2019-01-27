@@ -1,3 +1,5 @@
+package ch1;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,9 +15,9 @@ public class Ch1 {
 //        printLotteryNumber();
 //        System.out.println(generatePascalsTriangle(4));
 //        System.out.println(average(1, 2));
-//        Ch1.printInt(6);
-//        Ch1.normalize359(1200);
-//        Ch1.normalize359(-1300);
+//        ch1.Ch1.printInt(6);
+//        ch1.Ch1.normalize359(1200);
+//        ch1.Ch1.normalize359(-1300);
 //        int[][] square = {
 //                {16, 3, 2, 13},
 //                {5, 10, 11, 8},

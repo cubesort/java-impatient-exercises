@@ -1,3 +1,5 @@
+package ch2;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -6,12 +8,12 @@ import java.util.Random;
 public class Ch2 {
     public static void main(String[] args) {
 //        String[] date = { "2", "2019" };
-//        Cal.generateCal(date);
-//        Point p = new Point(3, 4).translate(1, 3).scale(0.5f);
+//        ch2.Cal.generateCal(date);
+//        ch2.Point p = new ch2.Point(3, 4).translate(1, 3).scale(0.5f);
 //        System.out.println(p.getX());
 //        System.out.println(p.getY());
-//        Point p1 = new Point();
-//        Car car = new Car();
+//        ch2.Point p1 = new ch2.Point();
+//        ch2.Car car = new ch2.Car();
 //        car.move(100);
 //        System.out.println(car.getGas());
 //        System.out.println(car.getLocation());
@@ -19,13 +21,13 @@ public class Ch2 {
 //        System.out.println(car.getGas());
 //        System.out.println(car.getLocation());
 //        int[] array = { 1, 2, 3, 4, 5 };
-//        System.out.println(RandomNumbers.randomElement(array));
+//        System.out.println(ch2.RandomNumbers.randomElement(array));
 //        ArrayList<Integer> arrayList = new ArrayList<Integer>();
 //        for (int item : array) {
 //            arrayList.add(item);
 //        }
-//        System.out.println(RandomNumbers.randomElement(arrayList));
-//        Queue queue = new Queue();
+//        System.out.println(ch2.RandomNumbers.randomElement(arrayList));
+//        ch2.Queue queue = new ch2.Queue();
 //        queue.add("0");
 //        queue.add("1");
 //        queue.add("2");
@@ -34,7 +36,7 @@ public class Ch2 {
 //        queue.remove();
 //        System.out.println(queue.getHead());
 //        System.out.println(queue.getTail());
-//        Queue.Iterator iterator = queue.iterator();
+//        ch2.Queue.Iterator iterator = queue.iterator();
 //        System.out.println(iterator.next());
 //        System.out.println(iterator.next());
     }
