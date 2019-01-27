@@ -5,13 +5,19 @@ public class Ch3_4 {
         IntSequence seq = IntSequence.of(3, 1, 4, 1, 5, 6);
         System.out.println(seq.hasNext());
         System.out.println(seq.next());
+
+        IntSequence constant = IntSequence.constant(1);
+        System.out.println(constant.next());
+        System.out.println(constant.next());
     }
 }
 
 interface IntSequence {
     int next();
 
-    boolean hasNext();
+    default boolean hasNext() {
+        return true;
+    }
 
     static IntSequence of (int... numbers) {
         return new IntSequence() {
@@ -26,5 +32,9 @@ interface IntSequence {
                 return numbers[counter - 1];
             }
         };
+    }
+
+    static IntSequence constant (int value) {
+        return () -> value;
     }
 }
