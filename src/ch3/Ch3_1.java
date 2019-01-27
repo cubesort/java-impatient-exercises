@@ -1,3 +1,5 @@
+package ch3;
+
 public class Ch3_1 {
     public static void main(String[] args) {
         Measurable[] measurables = {
