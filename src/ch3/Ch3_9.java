@@ -1,6 +1,6 @@
 package ch3;
 
-public class ch3_9 {
+public class Ch3_9 {
     static public void main(String[] args) {
         Greeter alex = new Greeter("Alex", 3);
         Greeter aaron = new Greeter("Aaron", 2);
