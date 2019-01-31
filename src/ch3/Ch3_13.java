@@ -3,7 +3,7 @@ package ch3;
 import java.io.File;
 import java.util.Arrays;
 
-public class ch3_13 {
+public class Ch3_13 {
     public static void main(String[] args) {
         File[] files = new File(".").listFiles();
         sort(files);
