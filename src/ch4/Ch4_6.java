@@ -2,7 +2,7 @@ package ch4;
 
 import java.util.Objects;
 
-public class Ch4_5 {
+public class Ch4_6 {
     public static void main(String[] args) {
         Item item1 = new Item("a", 1);
         Item item2 = new Item("a", 1);
