@@ -8,7 +8,7 @@ public class Ch6_7 {
     }
 }
 
-class Pair<E extends Comparable> {
+class Pair<E extends Comparable<E>> {
     private E first;
     private E second;
 
@@ -26,9 +26,7 @@ class Pair<E extends Comparable> {
     }
 
     public E max() {
-        Comparable a = (Comparable) first;
-        Comparable b = (Comparable) second;
-        if (a.compareTo(b) >= 0) {
+        if (first.compareTo(second) >= 0) {
             return first;
         }
 
