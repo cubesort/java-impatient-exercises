@@ -1,5 +1,6 @@
 package ch6;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Ch6_20 {
@@ -11,7 +12,7 @@ public class Ch6_20 {
     @SafeVarargs
     public static final <T> T[] repeat(int n, T... objs) {
         @SuppressWarnings("unchecked")
-        T[] res = (T[]) java.lang.reflect.Array.newInstance(objs.getClass().getComponentType(), n * objs.length);
+        T[] res = (T[]) Array.newInstance(objs.getClass().getComponentType(), n * objs.length);
 
         for (int i = 0; i < objs.length; i++) {
             System.arraycopy(objs, 0, res, i * objs.length, objs.length);
