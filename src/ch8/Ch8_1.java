@@ -1,6 +1,5 @@
 package ch8;
 
-import java.util.List;
 import java.util.stream.Stream;
 
 public class Ch8_1 {
