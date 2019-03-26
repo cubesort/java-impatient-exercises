@@ -9,8 +9,8 @@ import java.util.TreeMap;
 public class Ch7_7 {
     public static void main(String[] args) {
         try {
-            String path = System.getProperty("java.class.path");
-            Map<String, Integer> counts = count(path + "/ch7/words.txt");
+            String path = System.getProperty("user.dir");
+            Map<String, Integer> counts = count(path + "/src/ch7/words.txt");
             System.out.println(counts);
         } catch(FileNotFoundException ex) {
             System.out.println(ex.toString());

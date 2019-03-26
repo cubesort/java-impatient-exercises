@@ -16,7 +16,7 @@ public class Ch8_7 {
     }
 
     public static String[] first100words(String pathname) throws IOException {
-        Path path = Path.of(System.getProperty("java.class.path"), pathname);
+        Path path = Path.of(System.getProperty("user.dir"), "src", pathname);
         try (Scanner in = new Scanner(path)) {
             return in
                     .useDelimiter("[,\\s]")

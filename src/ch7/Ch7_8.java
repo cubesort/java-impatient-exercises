@@ -8,8 +8,8 @@ import java.util.*;
 public class Ch7_8 {
     public static void main(String[] args) {
         try {
-            String path = System.getProperty("java.class.path");
-            Map<String, Set<Integer>> counts = findLines(path + "/ch7/words.txt");
+            String path = System.getProperty("user.dir");
+            Map<String, Set<Integer>> counts = findLines(path + "/src/ch7/words.txt");
             System.out.println(counts);
         } catch(IOException ex) {
             System.out.println(ex.toString());
