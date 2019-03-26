@@ -9,6 +9,6 @@ public class Ch8_6 {
     }
 
     public static boolean isWord(String str) {
-        return str.codePoints().anyMatch(Character::isAlphabetic);
+        return str.length() > 0 && str.codePoints().allMatch(Character::isAlphabetic);
     }
 }
