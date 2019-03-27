@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Ch8_7 {
     public static void main(String[] args) {
         try {
-            String[] words = first100words("ch8/words.txt");
+            String[] words = first100words("resources/words.txt");
             System.out.println(Arrays.toString(words));
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
@@ -16,10 +16,10 @@ public class Ch8_7 {
     }
 
     public static String[] first100words(String pathname) throws IOException {
-        Path path = Path.of(System.getProperty("user.dir"), "src", pathname);
+        Path path = Path.of(System.getProperty("user.dir"), pathname);
         try (Scanner in = new Scanner(path)) {
             return in
-                    .useDelimiter("[,\\s]")
+                    .useDelimiter("[[^\\w]]")
                     .tokens()
                     .filter(Ch8_6::isWord)
                     .limit(100)

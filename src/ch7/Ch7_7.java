@@ -10,7 +10,7 @@ public class Ch7_7 {
     public static void main(String[] args) {
         try {
             String path = System.getProperty("user.dir");
-            Map<String, Integer> counts = count(path + "/src/ch7/words.txt");
+            Map<String, Integer> counts = count(path + "/resources/words.txt");
             System.out.println(counts);
         } catch(FileNotFoundException ex) {
             System.out.println(ex.toString());
@@ -19,12 +19,14 @@ public class Ch7_7 {
 
     public static Map<String, Integer> count(String path) throws FileNotFoundException {
         try (Scanner in = new Scanner(new File(path))) {
-            in.useDelimiter(" ");
+            in.useDelimiter("[^\\w]");
             Map<String, Integer> counts = new TreeMap<>();
 
             while (in.hasNext()) {
                 String word = in.next();
-                counts.compute(word, (k, v) -> v == null ? 1 : v + 1);
+                if (!word.equals("")) {
+                    counts.compute(word.toLowerCase(), (k, v) -> v == null ? 1 : v + 1);
+                }
             }
 
             return counts;

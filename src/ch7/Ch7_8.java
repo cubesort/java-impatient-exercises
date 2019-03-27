@@ -9,7 +9,7 @@ public class Ch7_8 {
     public static void main(String[] args) {
         try {
             String path = System.getProperty("user.dir");
-            Map<String, Set<Integer>> counts = findLines(path + "/src/ch7/words.txt");
+            Map<String, Set<Integer>> counts = findLines(path + "/resources/words.txt");
             System.out.println(counts);
         } catch(IOException ex) {
             System.out.println(ex.toString());
@@ -23,11 +23,13 @@ public class Ch7_8 {
             String line = in.readLine();
             int lineNumber = 1;
             while (line != null) {
-                String[] words = line.split(" ");
+                String[] words = line.split("[^\\w]");
                 for (String word : words) {
-                    Set<Integer> lines = lineMap.getOrDefault(word, new TreeSet<>());
-                    lines.add(lineNumber);
-                    lineMap.put(word, lines);
+                    if (!word.equals("")) {
+                        Set<Integer> lines = lineMap.getOrDefault(word, new TreeSet<>());
+                        lines.add(lineNumber);
+                        lineMap.put(word, lines);
+                    }
                 }
                 lineNumber++;
                 line = in.readLine();
